@@ -9,17 +9,21 @@ typedef struct node {
 main() {
   void printList(NodePtr);
   NodePtr makeNode(int);
-  int n = 7;
+  int n;
+    for (n = 0; n < 10; n++) {
+    printf("%d\n", n);
+}
+
   NodePtr top, np, last;
   
   top = NULL;
-  if(scanf("%d", &n) != 1)n = 7;
+  if(scanf("%d", &n) != 1)n = 0;
   while (n != 0) {
     np = makeNode(n);
     if(top == NULL) top = np;
     else last -> next = np;
     last = np;
-    if (scanf("%d", &n) != 1) n = 7;
+    if (scanf("%d", &n) != 1) n = 0;
   }
   printList(top);
 }
